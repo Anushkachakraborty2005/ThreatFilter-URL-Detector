@@ -2,18 +2,26 @@ import streamlit as st
 import requests
 import base64
 import os
-from bs4 import BeautifulSoup 
-import urllib3 
+from bs4 import BeautifulSoup
+import urllib3
+from dotenv import load_dotenv # Import load_dotenv
+
+# --- Load environment variables ---
+load_dotenv() # Load variables from .env at the very beginning of the script
 
 # Suppress InsecureRequestWarning when verify=False is used (for demonstration only)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 st.set_page_config(layout="centered", page_title="ThreatFilter - Spam URL Detection", initial_sidebar_state="expanded")
 
-# --- VirusTotal API Key (HARDCODED FOR IMMEDIATE DEMONSTRATION - INSECURE!) ---
-# Replace this with your actual key.
-# For production, NEVER hardcode your key like this. Use environment variables instead.
-VIRUSTOTAL_API_KEY = "2899e8906c1aa55bcb3286030ecb5e632ef96556c0713cca527dcafe8137c29f"
+# --- VirusTotal API Key ---
+# Get the API key from environment variables (loaded from .env)
+VIRUSTOTAL_API_KEY = os.getenv("VIRUSTOTAL_API_KEY")
+
+# Check if the API key is found
+if not VIRUSTOTAL_API_KEY:
+    st.error("VirusTotal API Key not found. Please ensure 'VIRUSTOTAL_API_KEY' is set in your .env file or as an environment variable.")
+    st.stop() # This will stop the app execution and display the error message
 
 # --- Web Scraping Function to get Page Description ---
 def fetch_page_description(url):
@@ -29,7 +37,8 @@ def fetch_page_description(url):
         response = requests.get(url, headers=headers, timeout=5, verify=False) 
         response.raise_for_status() # Raise an HTTPError for bad responses (4xx or 5xx)
         
-        soup = BeautifulSoup(response.text, 'html.parser') # Parse the HTML content
+        # Use 'html.parser' as it's built-in, or ensure lxml is installed if you want to use 'lxml'
+        soup = BeautifulSoup(response.text, 'html.parser') 
         
         title = soup.find('title')
         description_meta = soup.find('meta', attrs={'name': 'description'}) or \
@@ -60,8 +69,8 @@ def check_url_virustotal(url):
     if not url:
         return 'error', "No URL provided.", []
 
-    if not VIRUSTOTAL_API_KEY:
-        return 'error', "VirusTotal API Key is missing. Please configure it.", []
+    # VIRUSTOTAL_API_KEY is already checked and st.stop() if not found at the start of the script.
+    # So, we can remove the redundant check here.
 
     url_id = base64.urlsafe_b64encode(url.encode()).decode().strip("=")
 
@@ -157,7 +166,7 @@ with st.sidebar:
     st.markdown("<h3 style='color: #FFD700;'>👨‍💻 Developed by:</h3>", unsafe_allow_html=True) 
     # Replace 'YOUR_LINKEDIN_PROFILE_URL' with your actual LinkedIn profile URL
     # Replace 'Your Name/Alias Here' with the text you want to display
-    st.markdown("[Anushka Chakraborty](https://www.linkedin.com/in/anushka-chakraborty-006881311/L)", unsafe_allow_html=True) 
+    st.markdown("[Your Name/Alias Here](YOUR_LINKEDIN_PROFILE_URL)", unsafe_allow_html=True) 
 
 
 # --- Main Content Area ---
