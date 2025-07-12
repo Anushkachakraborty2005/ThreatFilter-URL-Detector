@@ -77,15 +77,15 @@ Here's a concise overview of how the ThreatFilter application processes a URL:
     * Consolidated analysis results are displayed using various Streamlit UI components (e.g., `st.success`, `st.error`).
     * Simulated user reviews and metrics are presented for enhanced contextual feedback.
   ---
-## Getting Started 🚀
+## Evaluation 📈
 
-### Clone the Repository ⬇️
+The effectiveness of the ThreatFilter application is primarily evaluated based on its functional aspects and integration:
 
-```bash
-git clone [https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)
-cd ThreatFilter-URL-Detector
-```bash
-cd ThreatFilter-URL-Detector
+* **VirusTotal API Integration**: The accuracy of URL threat detection is directly dependent on the real-time intelligence and comprehensive database provided by the VirusTotal API.
+* **Web Scraping Reliability**: The ability to consistently extract relevant website titles and meta descriptions for safe URLs is crucial for providing contextual information to the user.
+* **User Experience & Responsiveness**: The Streamlit interface is evaluated for its ease of use, responsiveness, and quick processing of URL queries, ensuring a smooth user interaction.
+
+*Note: The core threat intelligence and URL analysis are provided by the third-party VirusTotal API. This application functions as a user-friendly interface to leverage that powerful service.*
 
 
 
