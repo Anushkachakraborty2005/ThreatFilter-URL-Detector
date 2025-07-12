@@ -4,40 +4,47 @@ import base64
 import os
 from bs4 import BeautifulSoup
 import urllib3
-from dotenv import load_dotenv # Import load_dotenv
+from dotenv import load_dotenv
 
 # --- Load environment variables ---
-load_dotenv() # Load variables from .env at the very beginning of the script
+# This line MUST be called early in your script to load the .env file contents.
+load_dotenv()
 
-# Suppress InsecureRequestWarning when verify=False is used (for demonstration only)
+# Suppress InsecureRequestWarning when verify=False is used.
+# IMPORTANT NOTE: While this fixes the SSL: CERTIFICATE_VERIFY_FAILED error for quick testing,
+# in a production environment, you should ideally resolve the underlying SSL certificate issues
+# or ensure proper certificate handling, rather than just disabling warnings.
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 st.set_page_config(layout="centered", page_title="ThreatFilter - Spam URL Detection", initial_sidebar_state="expanded")
 
-# --- VirusTotal API Key ---
-# Get the API key from environment variables (loaded from .env)
+# --- VirusTotal API Key Handling ---
+# Your API key will be loaded from the .env file.
+# Make sure your .env file in the same directory as app.py contains:
+# VIRUSTOTAL_API_KEY="22899e8906c1aa55bcb3286030ecb5e632ef96556c0713cca527dcafe8137c29"
 VIRUSTOTAL_API_KEY = os.getenv("VIRUSTOTAL_API_KEY")
 
-# Check if the API key is found
+# Check if the API key was successfully loaded. If not, display an error and stop the app.
 if not VIRUSTOTAL_API_KEY:
-    st.error("VirusTotal API Key not found. Please ensure 'VIRUSTOTAL_API_KEY' is set in your .env file or as an environment variable.")
-    st.stop() # This will stop the app execution and display the error message
+    st.error("VirusTotal API Key not found. Please ensure 'VIRUSTOTAL_API_KEY' is set in your .env file in the same directory as app.py, or as an environment variable.")
+    st.stop() # This halts the Streamlit app execution at this point, preventing further errors.
 
 # --- Web Scraping Function to get Page Description ---
 def fetch_page_description(url):
     """
-    Fetches the title and meta description from a given URL using html.parser.
-    Returns a concise string description.
+    Fetches the title and meta description from a given URL.
+    Handles common parsing issues and SSL verification.
     """
     try:
         # Use a user-agent to mimic a browser, as some sites block default Python requests
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
         
-        # Add a timeout to prevent hanging indefinitely
-        response = requests.get(url, headers=headers, timeout=5, verify=False) 
+        # Add a timeout to prevent hanging indefinitely.
+        # `verify=False` addresses the SSL: CERTIFICATE_VERIFY_FAILED error.
+        response = requests.get(url, headers=headers, timeout=10, verify=False) 
         response.raise_for_status() # Raise an HTTPError for bad responses (4xx or 5xx)
         
-        # Use 'html.parser' as it's built-in, or ensure lxml is installed if you want to use 'lxml'
+        # Explicitly use 'html.parser' which is a built-in Python HTML parser and does not require external installations like lxml.
         soup = BeautifulSoup(response.text, 'html.parser') 
         
         title = soup.find('title')
@@ -69,13 +76,13 @@ def check_url_virustotal(url):
     if not url:
         return 'error', "No URL provided.", []
 
-    # VIRUSTOTAL_API_KEY is already checked and st.stop() if not found at the start of the script.
-    # So, we can remove the redundant check here.
+    # The VIRUSTOTAL_API_KEY is already checked at the very beginning of the script
+    # with st.stop(), so we can remove the redundant check here.
 
     url_id = base64.urlsafe_b64encode(url.encode()).decode().strip("=")
 
     headers = {
-        "x-apikey": VIRUSTOTAL_API_KEY,
+        "x-apikey": VIRUSTOTAL_API_KEY, 
         "accept": "application/json"
     }
 
@@ -136,17 +143,17 @@ def check_url_virustotal(url):
 # --- Sidebar Content ---
 with st.sidebar:
     # Main Sidebar Title
-    st.markdown("<h2 style='color: #E0E0E0;'>🌐 ThreatFilter Info</h2>", unsafe_allow_html=True) 
+    st.markdown("<h2 style='color: #E0E0E0;'>🌐 ThreatFilter Info</h2>", unsafe_allow_html=True)
     st.markdown("---")
 
     # App Information Section
-    st.markdown("<h3 style='color: #FF6347;'>🛡️ App Information</h3>", unsafe_allow_html=True) 
+    st.markdown("<h3 style='color: #FF6347;'>🛡️ App Information</h3>", unsafe_allow_html=True)
     st.write("This app helps you detect potentially spam or malicious URLs using the VirusTotal API.")
     st.write("It also attempts to provide a brief description of safe websites through web scraping.")
     st.markdown("---")
 
     # Features Section
-    st.markdown("<h3 style='color: #6495ED;'>🔍 Features</h3>", unsafe_allow_html=True) 
+    st.markdown("<h3 style='color: #6495ED;'>🔍 Features</h3>", unsafe_allow_html=True)
     st.markdown("- Real-time URL threat analysis")
     st.markdown("- Detailed vendor detections for malicious/suspicious URLs")
     st.markdown("- Automatic website content description (for safe URLs)")
@@ -154,7 +161,7 @@ with st.sidebar:
     st.markdown("---")
 
     # Tech Stack Section
-    st.markdown("<h3 style='color: #90EE90;'>💻 Tech Stack</h3>", unsafe_allow_html=True) 
+    st.markdown("<h3 style='color: #90EE90;'>💻 Tech Stack</h3>", unsafe_allow_html=True)
     st.markdown("- Python")
     st.markdown("- Streamlit")
     st.markdown("- Requests (HTTP client)")
@@ -162,11 +169,9 @@ with st.sidebar:
     st.markdown("- VirusTotal API")
     st.markdown("---")
     
-    # Developed by Section (Updated for LinkedIn Link)
+    # Developed by Section - With your provided details
     st.markdown("<h3 style='color: #FFD700;'>👨‍💻 Developed by:</h3>", unsafe_allow_html=True) 
-    # Replace 'YOUR_LINKEDIN_PROFILE_URL' with your actual LinkedIn profile URL
-    # Replace 'Your Name/Alias Here' with the text you want to display
-    st.markdown("[Your Name/Alias Here](YOUR_LINKEDIN_PROFILE_URL)", unsafe_allow_html=True) 
+    st.markdown("[Anushka Chakraborty](https://www.linkedin.com/in/anushka-chakraborty-006881311/)", unsafe_allow_html=True) 
 
 
 # --- Main Content Area ---
