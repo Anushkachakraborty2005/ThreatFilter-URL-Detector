@@ -18,7 +18,7 @@ This project is built using the following technologies:
 * **BeautifulSoup4 (bs4)**: A Python library for parsing HTML and XML documents, used for web scraping page descriptions.
 * **python-dotenv**: For securely loading environment variables (like API keys) from a `.env` file during local development.
 * **VirusTotal API**: The primary service used for checking the safety and reputation of URLs.
-  # ThreatFilter - Spam URL Detection
+
 
 ## Screenshots
 
@@ -51,21 +51,30 @@ This application offers the following key features:
 * 📄 **Automatic Website Content Description**: For safe URLs, attempts to fetch and display a brief description of the website content through web scraping.
 * 📊 **Simulated User Engagement Metrics**: Provides simulated user reviews and estimated user counts to give a holistic (though not real-time) view of a URL's perceived reputation.
 
-## Model Workflow
+## Model Workflow 🧠
 
-Here's a high-level overview of how the ThreatFilter application processes a URL:
+Here's a high-level overview of how the ThreatFilter application processes a URL from submission to result display:
 
-1.  **User Input**: The user enters a URL into the provided input field and clicks the "Check URL" button.
-2.  **VirusTotal API Query**: The application sends the submitted URL to the VirusTotal API for comprehensive threat analysis. The URL is first Base64-encoded as required by the API.
-3.  **Threat Analysis**: VirusTotal scans the URL using numerous security engines and databases, returning a detailed report on its malicious, suspicious, harmless, or undetected status.
-4.  **Status Interpretation**: The application interprets VirusTotal's response:
-    * If the URL is flagged as **malicious**, a prominent danger warning is displayed along with the count of detecting vendors and simulated negative user reviews.
-    * If the URL is flagged as **suspicious**, a warning is shown with a concise message and simulated cautious user reviews.
-    * If the URL is **safe** (no malicious or suspicious flags), a success message is displayed.
-    * If the URL is **not found** in VirusTotal's database, an informational message is provided, suggesting it might be a new or unscanned URL.
-    * Any **API errors** (e.g., rate limits, invalid key) are explicitly reported.
-5.  **Website Content Scraping (for Safe URLs)**: If the URL is determined to be safe, the application then performs a separate web scraping operation using `Requests` and `BeautifulSoup4` to fetch the website's title and meta description, providing a one-line summary of its content.
-6.  **Display Results**: All relevant information, including the safety status, content description (if available), and simulated user metrics, is presented clearly in the Streamlit interface.
+1.  **URL Submission & Initial API Query**
+    * The user inputs a URL into the web interface.
+    * Upon submission, the application encodes the URL and sends a request to the VirusTotal API.
+
+2.  **VirusTotal Analysis & Classification**
+    * VirusTotal processes the submitted URL, performing extensive scans through its array of security engines and threat intelligence databases.
+    * Based on these scans, VirusTotal provides an assessment, classifying the URL as malicious, suspicious, harmless, or undetected.
+
+3.  **Application Response Interpretation**
+    * The application receives and interprets the comprehensive report from VirusTotal.
+    * If the URL is flagged as **malicious** or **suspicious**, a clear warning message is displayed, indicating the number of security vendors that detected it and including simulated user reviews to caution the user.
+    * If the URL is deemed **safe** (harmless or undetected), the application proceeds to gather more contextual information.
+
+4.  **Website Content Extraction (for Safe URLs)**
+    * For URLs confirmed to be safe by VirusTotal, the application attempts to make an HTTP GET request to the URL.
+    * It then uses BeautifulSoup4 to parse the HTML content, extracting the page's title and meta description to provide a brief overview of the website.
+
+5.  **Final Result Presentation**
+    * All collected information—including the VirusTotal safety status, the scraped website description (if available), and simulated user engagement metrics—is cohesively presented to the user on the Streamlit dashboard, offering a complete picture of the URL's assessment.
+
 
 
 ---
