@@ -77,6 +77,27 @@ Here's a concise overview of how the ThreatFilter application processes a URL:
 5.  **Final Result Presentation**
     * Consolidated analysis results are displayed using various Streamlit UI components (e.g., `st.success`, `st.error`).
     * Simulated user reviews and metrics are presented for enhanced contextual feedback.
+  
+## 🚀 Getting Started
+### 💻 Terminal Commands
+
+This section outlines essential terminal commands for setting up, running, and interacting with the ThreatFilter project.
+
+### [1] Cloning the Repository
+
+```bash
+git clone [https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)ttps://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)
+###[2]  Navigating to Project Directory
+cd ThreatFilter-URL-Detector
+###[3] Setting Up Virtual Environment (Example for macOS/Linux)
+python3 -m venv venv
+source venv/bin/activate
+###[4]Installing Dependencies
+pip install -r requirements.txt
+###[5] Running the Streamlit Application
+streamlit run app.py
+
+
   ---
 ## Model Effectiveness ✨
 
