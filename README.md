@@ -86,17 +86,18 @@ The effectiveness of the ThreatFilter application is assessed through its robust
 * **User Interaction & Reliability**: The overall effectiveness is also measured by the Streamlit application's responsiveness, ease of use, and consistent performance in processing user queries and delivering clear results.
 
 ## 📁 Project Structure
+
 ThreatFilter-URL-Detector/
-├── .streamlit/             # Streamlit specific configuration files (auto-generated)
-├── venv/                   # Python virtual environment (ignored by Git)
-├── screenshots/            # Directory to store project screenshots
-│   ├── image_25f555.png    # Screenshot of Main Interface
-│   ├── image_25f0de.png    # Screenshot of Safe URL Test
-│   └── image_25f519.png    # Screenshot of Malicious URL Test
-├── app.py                  # Main Streamlit application file
-├── .env                    # Environment variables for API keys (ignored by Git)
-├── .gitignore              # Specifies intentionally untracked files to ignore
-└── requirements.txt        # List of Python dependencies
+├── .streamlit/              # Streamlit configuration files (auto-generated)
+├── venv/                    # Python virtual environment (ignored by Git)
+├── screenshots/             # Contains screenshots of app interface and tests  
+│   ├── image_25f555.png     # Screenshot of Main Interface  
+│   ├── image_25f0de.png     # Screenshot of Safe URL Test  
+│   ├── image_25f519.png     # Screenshot of Malicious URL Test  
+├── app.py                   # Main Streamlit application script  
+├── .env                     # Environment variables for API keys (not tracked by Git)  
+├── .gitignore               # Defines files and folders Git should ignore  
+└── requirements.txt         # List of required Python dependencies
 
 
 
