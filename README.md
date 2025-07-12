@@ -82,6 +82,28 @@ Here's a concise overview of how the ThreatFilter application processes a URL:
 ```bash
 git clone https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git
 cd ThreatFilter-URL-Detector
+---
+Setup Environment & Install Dependencies 📦
+# For Windows PowerShell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+---
+Configure VirusTotal API Key 🔑
+### Configure Environment Variables 🔐
+
+```bash
+# Create a .env file in the root directory
+touch .env
+---
+Then add your API key in the following format inside .env:
+VIRUSTOTAL_API_KEY="YOUR_VIRUSTOTAL_API_KEY_HERE"
+
 
 
 
