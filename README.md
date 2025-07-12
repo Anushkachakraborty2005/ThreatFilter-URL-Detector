@@ -53,27 +53,28 @@ This application offers the following key features:
 
 ## Model Workflow 🧠
 
-Here's a high-level overview of how the ThreatFilter application processes a URL from submission to result display:
+Here's a concise overview of how the ThreatFilter application processes a URL:
 
-1.  **URL Submission & Initial API Query**
-    * The user inputs a URL into the web interface.
-    * Upon submission, the application encodes the URL and sends a request to the VirusTotal API.
+1.  **URL Submission & API Query**
+    * User input is captured via the Streamlit frontend.
+    * The URL is Base64 encoded for the VirusTotal API request.
 
 2.  **VirusTotal Analysis & Classification**
-    * VirusTotal processes the submitted URL, performing extensive scans through its array of security engines and threat intelligence databases.
-    * Based on these scans, VirusTotal provides an assessment, classifying the URL as malicious, suspicious, harmless, or undetected.
+    * An external API call is made to VirusTotal for comprehensive threat intelligence.
+    * The application retrieves `last_analysis_stats` (malicious, suspicious, harmless, undetected counts) from the API response.
 
 3.  **Application Response Interpretation**
-    * The application receives and interprets the comprehensive report from VirusTotal.
-    * If the URL is flagged as **malicious** or **suspicious**, a clear warning message is displayed, indicating the number of security vendors that detected it and including simulated user reviews to caution the user.
-    * If the URL is deemed **safe** (harmless or undetected), the application proceeds to gather more contextual information.
+    * Python logic parses the JSON report received from VirusTotal.
+    * Streamlit's UI components are conditionally rendered based on `malicious_count` and `suspicious_count`.
 
 4.  **Website Content Extraction (for Safe URLs)**
-    * For URLs confirmed to be safe by VirusTotal, the application attempts to make an HTTP GET request to the URL.
-    * It then uses BeautifulSoup4 to parse the HTML content, extracting the page's title and meta description to provide a brief overview of the website.
+    * An HTTP GET request is performed on the URL using the `requests` library.
+    * HTML content is parsed with BeautifulSoup4 to extract `title` and `meta description` tags.
 
 5.  **Final Result Presentation**
-    * All collected information—including the VirusTotal safety status, the scraped website description (if available), and simulated user engagement metrics—is cohesively presented to the user on the Streamlit dashboard, offering a complete picture of the URL's assessment.
+    * Consolidated analysis results are displayed using various Streamlit UI components (e.g., `st.success`, `st.error`).
+    * Simulated user reviews and metrics are presented for enhanced contextual feedback.
+
 
 
 
