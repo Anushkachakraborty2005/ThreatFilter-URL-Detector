@@ -80,18 +80,8 @@ Here's a concise overview of how the ThreatFilter application processes a URL:
 ### Clone the Repository ⬇️
 
 ```bash
-git clone https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git
+git clone [https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)
 cd ThreatFilter-URL-Detector
-Setup Environment & Install Dependencies 📦
-For Windows PowerShell:
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-For macOS/Linux:
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
 
 
 
