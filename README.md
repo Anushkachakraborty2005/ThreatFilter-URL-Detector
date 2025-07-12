@@ -74,6 +74,24 @@ Here's a concise overview of how the ThreatFilter application processes a URL:
 5.  **Final Result Presentation**
     * Consolidated analysis results are displayed using various Streamlit UI components (e.g., `st.success`, `st.error`).
     * Simulated user reviews and metrics are presented for enhanced contextual feedback.
+  
+    ## Getting Started 🚀
+
+Follow these steps to set up and run the ThreatFilter application on your local machine.
+
+### Clone the Repository ⬇️
+
+```bash
+git clone [https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)
+cd ThreatFilter-URL-Detector
+### Setup Environment & Install Dependencies 📦
+# For Windows PowerShell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+# For macOS/Linux (use one or the other based on your OS)
+python3 -m venv venv
+source venv/bin/activate
 
 
 
