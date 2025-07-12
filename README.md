@@ -1,6 +1,8 @@
-# ThreatFilter - Spam URL Detection 🖇
+#    🦾 ThreatFilter - Spam URL Detection 🦾
 
-## Live Preview
+
+## Live Preview 🪐
+
 
 Experience the app live: [Live Preview](https://threatfilter-url-detector-ccqbgqkascrccmkh7ksssc.streamlit.app/)
 
