@@ -28,7 +28,8 @@ Here are some screenshots illustrating the application's interface and functiona
 
 This image displays the overall layout of the ThreatFilter application, including the sidebar with information and the main area for URL input.
 
-!(https://github.com/user-attachments/assets/06acfd6c-a3ba-4c6e-a9de-1b7d84460982)
+![ThreatFilter Main Interface](https://github.com/user-attachments/assets/24b4e8b7-35f7-446b-8575-730166587f38)
+
 
 
 
