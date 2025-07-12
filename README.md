@@ -82,7 +82,8 @@ Here's a concise overview of how the ThreatFilter application processes a URL:
 ```bash
 git clone [https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)
 cd ThreatFilter-URL-Detector
-
+```bash
+cd ThreatFilter-URL-Detector
 
 
 
