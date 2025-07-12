@@ -7,6 +7,9 @@ This project helps detect potentially malicious URLs using the VirusTotal API.
 Here's a look at the full application interface:
 ![ThreatFilter Main Interface](screenshots/ThreatFilter Main Interface.jpg)
 
+![ThreatFilter Main Interface](https://github.com/user-attachments/assets/7c6e98c4-b55a-437e-9444-969eebcea867)
+
+
 ## Testing Safe URLs
 
 Example of a safe URL analysis:
