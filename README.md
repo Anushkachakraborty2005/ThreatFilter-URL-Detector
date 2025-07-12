@@ -28,14 +28,14 @@ Here are some screenshots illustrating the application's interface and functiona
 
 This image displays the overall layout of the ThreatFilter application, including the sidebar with information and the main area for URL input.
 
-(![Malicious URL Test](https://github.com/user-attachments/assets/d30bbbe7-8914-4edd-96a7-02f82761bf48)
+![Malicious URL Test](https://github.com/user-attachments/assets/d30bbbe7-8914-4edd-96a7-02f82761bf48)
 
 
 ### 2.Safe URL Test 🔍
 
 This screenshot shows the result when a benign (safe) URL is scanned, displaying confirmation of its safety and providing website information.
 
-(![Safe URL Test](https://github.com/user-attachments/assets/718e8bbc-f755-410b-ab66-8a92d7e4eead)
+![Safe URL Test](https://github.com/user-attachments/assets/718e8bbc-f755-410b-ab66-8a92d7e4eead)
 
 
 ### 3. Malicious URL Test ⚠
@@ -43,6 +43,13 @@ This screenshot shows the result when a benign (safe) URL is scanned, displaying
 This image demonstrates how the application warns users about potentially malicious URLs, indicating the number of detections and providing simulated user reviews.
 
 ![ThreatFilter Main Interface](https://github.com/user-attachments/assets/eeb8dfc3-59c0-4886-9e96-d3e9bbfb1374)
+
+
+This application offers the following key features:
+
+* ⚡ **Real-time URL Threat Analysis**: Quickly scans URLs using the VirusTotal API to determine their safety status.
+* 📄 **Automatic Website Content Description**: For safe URLs, attempts to fetch and display a brief description of the website content through web scraping.
+* 📊 **Simulated User Engagement Metrics**: Provides simulated user reviews and estimated user counts to give a holistic (though not real-time) view of a URL's perceived reputation.
 
 
 ---
