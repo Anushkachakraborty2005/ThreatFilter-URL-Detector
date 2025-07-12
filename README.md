@@ -87,27 +87,25 @@ This section outlines essential terminal commands for setting up, running, and i
 
 ```bash
 git clone [https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)ttps://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)
----
+```
 
 ###[2]  Navigating to Project Directory
 ```bash
 cd ThreatFilter-URL-Detector
----
+```
 ###[3] Setting Up Virtual Environment (Example for macOS/Linux)
 ```bash
 python3 -m venv venv
 source venv/bin/activate
----
+```
 ###[4]Installing Dependencies
 ```bash
 pip install -r requirements.txt
----
+```
 ###[5] Running the Streamlit Application
 ```bash
 streamlit run app.py
-
-
-  ---
+```
 ## Model Effectiveness ✨
 
 The effectiveness of the ThreatFilter application is assessed through its robust integration and reliable performance:
