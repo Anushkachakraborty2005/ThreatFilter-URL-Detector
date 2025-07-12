@@ -99,6 +99,13 @@ ThreatFilter-URL-Detector/
 ├── .gitignore            # Files & folders ignored by Git  
 └── requirements.txt      # Python dependencies
 
+## Acknowledgments 🧡
 
+* **API**: VirusTotal API for comprehensive URL threat intelligence.
+* **Libraries**: Streamlit, Requests, BeautifulSoup4, python-dotenv.
+
+## Contact 💬
+
+For questions or collaboration inquiries, please reach out to [Anushka Chakraborty](https://www.linkedin.com/in/anushka-chakraborty-006881311/).
 
 ---
