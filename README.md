@@ -142,10 +142,7 @@ Here's a concise overview of how the ThreatFilter application processes a URL:
     * Simulated user reviews and metrics are presented for enhanced contextual feedback.
 
 ---
-
 ## Getting Started 🚀
-
-Follow these steps to set up and run the ThreatFilter application on your local machine.
 
 ### Clone the Repository ⬇️
 
@@ -153,7 +150,6 @@ Follow these steps to set up and run the ThreatFilter application on your local 
 git clone [https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)
 cd ThreatFilter-URL-Detector
 Setup Environment & Install Dependencies 📦
-First, create a virtual environment and activate it:
 # For Windows PowerShell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
@@ -161,24 +157,15 @@ python -m venv venv
 # For macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
-Then, install the required Python packages:
+
 pip install -r requirements.txt
 Configure VirusTotal API Key 🔑
-This project requires a VirusTotal API key for its core functionality.
-
-Create a file named .env in the root directory of your project (the same folder as app.py).
-
-Add your VirusTotal API key to this .env file in the following format:
-
+# Create a file named .env in the root directory
+# Add your API key in this format:
 VIRUSTOTAL_API_KEY="YOUR_VIRUTOTAL_API_KEY_HERE"
-Replace "YOUR_VIRUTOTAL_API_KEY_HERE" with your actual API key.
-
-Security Note: The .env file is intentionally excluded from version control (.gitignore ensures this) to protect your sensitive API key.
-
 Run the Application ▶️
-With your virtual environment activated and API key configured, you can now run the Streamlit app:
 streamlit run app.py
-This command will open the application in your default web browser.
+
 
 
 
