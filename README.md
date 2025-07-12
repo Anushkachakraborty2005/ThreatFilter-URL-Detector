@@ -87,13 +87,18 @@ This section outlines essential terminal commands for setting up, running, and i
 
 ```bash
 git clone [https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)ttps://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git](https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.git)
+---
+
 ###[2]  Navigating to Project Directory
 cd ThreatFilter-URL-Detector
+---
 ###[3] Setting Up Virtual Environment (Example for macOS/Linux)
 python3 -m venv venv
 source venv/bin/activate
+---
 ###[4]Installing Dependencies
 pip install -r requirements.txt
+---
 ###[5] Running the Streamlit Application
 streamlit run app.py
 
@@ -106,7 +111,7 @@ The effectiveness of the ThreatFilter application is assessed through its robust
 * **API-Driven Threat Detection**: The primary effectiveness in identifying malicious or suspicious URLs directly stems from the comprehensive and real-time threat intelligence provided by the VirusTotal API.
 * **Contextual Data Enrichment**: The application's ability to accurately scrape and present relevant website descriptions for safe URLs enhances its utility, providing users with immediate context beyond just security status.
 * **User Interaction & Reliability**: The overall effectiveness is also measured by the Streamlit application's responsiveness, ease of use, and consistent performance in processing user queries and delivering clear results.
-
+---
 ##  Project Structure 📁
 
 ThreatFilter-URL-Detector/
@@ -120,12 +125,12 @@ ThreatFilter-URL-Detector/
 ├── .env                  # Environment variables (API keys, etc.)  
 ├── .gitignore            # Files & folders ignored by Git  
 └── requirements.txt      # Python dependencies
-
+---
 ## Acknowledgments 🧡
 
 * **API**: VirusTotal API for comprehensive URL threat intelligence.
 * **Libraries**: Streamlit, Requests, BeautifulSoup4, python-dotenv.
-
+---
 ## Contact 💬
 
 For questions or collaboration inquiries, please reach out to [Anushka Chakraborty](https://www.linkedin.com/in/anushka-chakraborty-006881311/).
