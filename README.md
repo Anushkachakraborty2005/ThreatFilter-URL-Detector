@@ -88,16 +88,16 @@ The effectiveness of the ThreatFilter application is assessed through its robust
 ## 📁 Project Structure
 
 ThreatFilter-URL-Detector/
-├── .streamlit/         # Streamlit configuration files (auto-generated)
-├── venv/               # Python virtual environment (ignored by Git)
-├── screenshots/        # Screenshots of app interface & testing
-│   ├── image_25f555.png    # Main Interface
-│   ├── image_25f0de.png    # Safe URL Test
-│   ├── image_25f519.png    # Malicious URL Test
-├── app.py              # Main Streamlit app script
-├── .env                # Environment variables (API keys, etc.)
-├── .gitignore          # Files & folders ignored by Git
-└── requirements.txt    # Python dependencies
+├── .streamlit/           # Streamlit configuration files (auto-generated)
+├── venv/                 # Python virtual environment (ignored by Git)
+├── screenshots/          # Screenshots of app interface & testing  
+│   ├── image_25f555.png      # Main Interface  
+│   ├── image_250fde.png      # Safe URL Test  
+│   ├── image_25f519.png      # Malicious URL Test  
+├── app.py                # Main Streamlit app script  
+├── .env                  # Environment variables (API keys, etc.)  
+├── .gitignore            # Files & folders ignored by Git  
+└── requirements.txt      # Python dependencies
 
 
 
