@@ -115,7 +115,7 @@ The effectiveness of the ThreatFilter application is assessed through its robust
 * **User Interaction & Reliability**: The overall effectiveness is also measured by the Streamlit application's responsiveness, ease of use, and consistent performance in processing user queries and delivering clear results.
 ---
 ```markdown
-## 📁 Project Structure
+📁 Project Structure
 
 ThreatFilter-URL-Detector/
 ├── .streamlit/           # Streamlit configuration files (auto-generated)
