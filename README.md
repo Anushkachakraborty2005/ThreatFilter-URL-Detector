@@ -77,17 +77,26 @@ Here's a concise overview of how the ThreatFilter application processes a URL:
     * Consolidated analysis results are displayed using various Streamlit UI components (e.g., `st.success`, `st.error`).
     * Simulated user reviews and metrics are presented for enhanced contextual feedback.
   ---
-## Evaluation 📈
+## Model Effectiveness ✨
 
-The effectiveness of the ThreatFilter application is primarily evaluated based on its functional aspects and integration:
+The effectiveness of the ThreatFilter application is assessed through its robust integration and reliable performance:
 
-* **VirusTotal API Integration**: The accuracy of URL threat detection is directly dependent on the real-time intelligence and comprehensive database provided by the VirusTotal API.
-* **Web Scraping Reliability**: The ability to consistently extract relevant website titles and meta descriptions for safe URLs is crucial for providing contextual information to the user.
-* **User Experience & Responsiveness**: The Streamlit interface is evaluated for its ease of use, responsiveness, and quick processing of URL queries, ensuring a smooth user interaction.
+* **API-Driven Threat Detection**: The primary effectiveness in identifying malicious or suspicious URLs directly stems from the comprehensive and real-time threat intelligence provided by the VirusTotal API.
+* **Contextual Data Enrichment**: The application's ability to accurately scrape and present relevant website descriptions for safe URLs enhances its utility, providing users with immediate context beyond just security status.
+* **User Interaction & Reliability**: The overall effectiveness is also measured by the Streamlit application's responsiveness, ease of use, and consistent performance in processing user queries and delivering clear results.
 
-*Note: The core threat intelligence and URL analysis are provided by the third-party VirusTotal API. This application functions as a user-friendly interface to leverage that powerful service.*
-
-
+## 📁 Project Structure
+ThreatFilter-URL-Detector/
+├── .streamlit/             # Streamlit specific configuration files (auto-generated)
+├── venv/                   # Python virtual environment (ignored by Git)
+├── screenshots/            # Directory to store project screenshots
+│   ├── image_25f555.png    # Screenshot of Main Interface
+│   ├── image_25f0de.png    # Screenshot of Safe URL Test
+│   └── image_25f519.png    # Screenshot of Malicious URL Test
+├── app.py                  # Main Streamlit application file
+├── .env                    # Environment variables for API keys (ignored by Git)
+├── .gitignore              # Specifies intentionally untracked files to ignore
+└── requirements.txt        # List of Python dependencies
 
 
 
