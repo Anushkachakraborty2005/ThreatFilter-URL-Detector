@@ -114,6 +114,7 @@ The effectiveness of the ThreatFilter application is assessed through its robust
 * **Contextual Data Enrichment**: The application's ability to accurately scrape and present relevant website descriptions for safe URLs enhances its utility, providing users with immediate context beyond just security status.
 * **User Interaction & Reliability**: The overall effectiveness is also measured by the Streamlit application's responsiveness, ease of use, and consistent performance in processing user queries and delivering clear results.
 ---
+```markdown
 ## 📁 Project Structure
 
 ThreatFilter-URL-Detector/
@@ -127,6 +128,7 @@ ThreatFilter-URL-Detector/
 ├── .env                  # Environment variables (API keys, etc.)  
 ├── .gitignore            # Files & folders ignored by Git  
 └── requirements.txt      # Python dependencies
+```
 ---
 ## Acknowledgments 🧡
 
