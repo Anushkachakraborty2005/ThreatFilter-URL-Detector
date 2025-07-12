@@ -24,25 +24,25 @@ This project is built using the following technologies:
 
 Here are some screenshots illustrating the application's interface and functionality:
 
-### 1. Main Application Interface
+### 1. 🖼️ Main Interface
 
 This image displays the overall layout of the ThreatFilter application, including the sidebar with information and the main area for URL input.
 
 ![ThreatFilter Main Interface](![Malicious URL Test](https://github.com/user-attachments/assets/d30bbbe7-8914-4edd-96a7-02f82761bf48)
-)
 
-### 2. Testing a Safe URL
+
+### 2.Safe URL Test 🔍
 
 This screenshot shows the result when a benign (safe) URL is scanned, displaying confirmation of its safety and providing website information.
 
 ![Safe URL Test](![Safe URL Test](https://github.com/user-attachments/assets/718e8bbc-f755-410b-ab66-8a92d7e4eead)
 
 
-### 3. Testing a Malicious URL
+### 3. Malicious URL Test ⚠
 
 This image demonstrates how the application warns users about potentially malicious URLs, indicating the number of detections and providing simulated user reviews.
 
 ![Malicious URL Test](![ThreatFilter Main Interface](https://github.com/user-attachments/assets/eeb8dfc3-59c0-4886-9e96-d3e9bbfb1374)
-)
+
 
 ---
