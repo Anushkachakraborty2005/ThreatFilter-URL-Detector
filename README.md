@@ -90,16 +90,20 @@ git clone [https://github.com/Anushkachakraborty2005/ThreatFilter-URL-Detector.g
 ---
 
 ###[2]  Navigating to Project Directory
+```bash
 cd ThreatFilter-URL-Detector
 ---
 ###[3] Setting Up Virtual Environment (Example for macOS/Linux)
+```bash
 python3 -m venv venv
 source venv/bin/activate
 ---
 ###[4]Installing Dependencies
+```bash
 pip install -r requirements.txt
 ---
 ###[5] Running the Streamlit Application
+```bash
 streamlit run app.py
 
 
