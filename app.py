@@ -17,7 +17,7 @@ st.set_page_config(layout="centered", page_title="ThreatFilter - Spam URL Detect
 # --- VirusTotal API Key Handling ---
 # The API key will be loaded from the .env file.
 # Ensure your .env file in the same directory as app.py contains:
-# VIRUSTOTAL_API_KEY="2899e8906c1aa55bcb3286030ecb5e632ef96556c0713cca527dcafe8137c29f"
+# VIRUSTOTAL_API_KEY="YOUR API_KEY"
 VIRUSTOTAL_API_KEY = os.getenv("VIRUSTOTAL_API_KEY")
 
 if not VIRUSTOTAL_API_KEY:
